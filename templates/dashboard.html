@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudyMate — Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <header class="header">
+        <h1>Dashboard</h1>
+        <a href="/" class="back-link">&larr; Back to Main Menu</a>
+    </header>
+
+    <div class="container">
+        <section class="card stats-card">
+            <h2>Study Statistics</h2>
+            <div class="stats-grid">
+                <div class="stat-box">
+                    <span class="stat-number">{{ stats.total_notes }}</span>
+                    <span class="stat-label">Total Notes</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-number">{{ stats.total_subjects }}</span>
+                    <span class="stat-label">Subjects Tracked</span>
+                </div>
+            </div>
+        </section>
+    </div>
+
+</body>
+</html>

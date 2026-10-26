@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudyMate — Manage Notes</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <header class="header">
+        <h1>Manage Notes</h1>
+        <a href="/" class="back-link">&larr; Back to Main Menu</a>
+    </header>
+
+    <div class="container">
+        <!-- Add Note Form -->
+        <section class="card">
+            <h2>Add New Note</h2>
+            <form action="/notes" method="POST" class="note-form">
+                <input type="text" name="subject" placeholder="Subject (e.g. Python, Math)" required>
+                <textarea name="content" placeholder="Write your note content here..." rows="4" required></textarea>
+                <button type="submit" class="btn">Save Note</button>
+            </form>
+        </section>
+
+        <!-- Notes List -->
+        <section class="card">
+            <h2>Your Saved Notes</h2>
+            <form action="/notes" method="GET" class="note-form">
+                <input type="text" name="q" value="{{ query }}" placeholder="Search notes...">
+                <button type="submit" class="btn">Search</button>
+            </form>
+            {% if not notes %}
+                <p class="empty-state">No notes found.</p>
+            {% else %}
+                <div class="notes-grid">
+                    {% for note in notes %}
+                        <div class="note-card">
+                            <div class="note-header">
+                                <span class="badge">{{ note.subject }}</span>
+                                <form action="/delete_note/{{ note.id }}" method="POST" style="display:inline;">
+                                    <button type="submit" class="delete-btn">&times;</button>
+                                </form>
+                            </div>
+                            <p class="note-content">{{ note.content }}</p>
+                        </div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </section>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,12 @@
+[
+    {
+        "id": 2,
+        "subject": "C++",
+        "content": "OOP concepts\r\nabstraction\r\ninheritance\r\nencapsulation\r\npolymorphism\r\nabstract classes\r\nobjects"
+    },
+    {
+        "id": 5,
+        "subject": "python",
+        "content": "list and dictionary\r\nfunctions\r\ntuples\r\nerror handling"
+    }
+]

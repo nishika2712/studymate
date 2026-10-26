@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudyMate — Main Menu</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <header class="header">
+        <h1>StudyMate</h1>
+        <p>Your personal learning companion</p>
+    </header>
+
+    <div class="container">
+        <section class="card menu-card">
+            <h2>MAIN MENU</h2>
+            <div class="menu-list">
+                <a href="/dashboard" class="menu-item">
+                    <span class="menu-num">1</span>
+                    <div>
+                        <strong>View Dashboard</strong>
+                        <p>See notes and subject statistics</p>
+                    </div>
+                </a>
+
+                <a href="/notes" class="menu-item">
+                    <span class="menu-num">2</span>
+                    <div>
+                        <strong>Manage Notes</strong>
+                        <p>Add, view, search, and delete notes</p>
+                    </div>
+                </a>
+            </div>
+        </section>
+    </div>
+
+</body>
+</html>
